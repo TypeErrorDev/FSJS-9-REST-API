@@ -149,6 +149,7 @@ router.put(
     }
   })
 );
+
 // A /api/courses/:id DELETE route that will delete the corresponding course and return a 204 HTTP status code and no content.
 router.delete(
   "/courses/:id",
