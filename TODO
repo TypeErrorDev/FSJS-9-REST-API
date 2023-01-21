@@ -51,36 +51,36 @@ Course Routes
             ☐ DELETE /api/courses/:id 204 - Deletes a course and returns no content @started(23-01-20 00:03)
 
     Exceeds Expectations
-        ☐ The GET /api/courses and /api/courses/:id routes filter out the following properties: @started(23-01-20 00:03)
-            ☐ createdAt @started(23-01-20 00:03)
-            ☐ updatedAt @started(23-01-20 00:03)
-        ☐ The PUT /api/courses/:id and DELETE /api/courses/:id routes return a 403 status code if the current user doesn't own the requested course @started(23-01-20 00:03)
+        ✔ The GET /api/courses and /api/courses/:id routes filter out the following properties: @started(23-01-20 00:03) @done(23-01-20 23:37) @lasted(23h34m11s)
+            ✔ createdAt @started(23-01-20 00:03) @done(23-01-20 23:37) @lasted(23h34m11s)
+            ✔ updatedAt @started(23-01-20 00:03) @done(23-01-20 23:37) @lasted(23h34m11s)
+        ✔ The PUT /api/courses/:id and DELETE /api/courses/:id routes return a 403 status code if the current user doesn't own the requested course @started(23-01-20 00:03) @done(23-01-20 23:37) @lasted(23h34m27s)
 
 Validation
     Meets Expectations
-        ☐ The POST and PUT routes validate if the request body contains the following required values: @started(23-01-20 00:03)
-            ☐ User @started(23-01-20 00:03)
-            ☐ firstName @started(23-01-20 00:03)
-            ☐ lastName @started(23-01-20 00:03)
-            ☐ emailAddress @started(23-01-20 00:03)
-            ☐ password @started(23-01-20 00:03)
-            ☐ Course @started(23-01-20 00:03)
-            ☐ title @started(23-01-20 00:03)
-            ☐ description @started(23-01-20 00:03)
-        ☐ Validation error(s) are sent with a400 status code @started(23-01-20 00:03)
+        ✔ The POST and PUT routes validate if the request body contains the following required values: @started(23-01-20 00:03) @done(23-01-20 23:37) @lasted(23h34m5s)
+            ✔ User @started(23-01-20 00:03) @done(23-01-20 23:37) @lasted(23h34m2s)
+            ✔ firstName @started(23-01-20 00:03) @done(23-01-20 23:37) @lasted(23h34m2s)
+            ✔ lastName @started(23-01-20 00:03) @done(23-01-20 23:37) @lasted(23h34m2s)
+            ✔ emailAddress @started(23-01-20 00:03) @done(23-01-20 23:37) @lasted(23h34m2s)
+            ✔ password @started(23-01-20 00:03) @done(23-01-20 23:37) @lasted(23h34m2s)
+            ✔ Course @started(23-01-20 00:03) @done(23-01-20 23:37) @lasted(23h34m2s)
+            ✔ title @started(23-01-20 00:03) @done(23-01-20 23:37) @lasted(23h34m2s)
+            ✔ description @started(23-01-20 00:03) @done(23-01-20 23:37) @lasted(23h34m2s)
+        ✔ Validation error(s) are sent with a 400 status code @started(23-01-20 00:03) @done(23-01-20 23:37) @lasted(23h34m2s)
 
     Exceeds Expectations
-        ☐ The POST /api/users route validates that the provided email address is a valid email address and isn't already associated with an existing user @started(23-01-20 00:03)
+        ✔ The POST /api/users route validates that the provided email address is a valid email address and isn't already associated with an existing user @started(23-01-20 00:03) @done(23-01-20 23:34) @lasted(23h31m6s)
 
 Password Security
     Meets Expectations
-        ☐ The POST /api/users route validates that the provided email address is a valid email address and isn't already associated with an existing user @started(23-01-20 00:03)
-
+        ✔ The POST /api/users route hashes the user's password before persisting the user to the database @started(23-01-20 00:03) @done(23-01-20 23:37) @lasted(23h34m39s)
+✔ @done(23-01-20 23:37)
 Permissions
     Meets Expectations
-        ☐ An Express middleware function authenticates the following routes: @started(23-01-20 00:03)
-            ☐ GET /api/users @started(23-01-20 00:03)
-            ☐ POST /api/courses @started(23-01-20 00:03)
-            ☐ PUT /api/courses/:id @started(23-01-20 00:03)
-            ☐ DELETE /api/courses/:id @started(23-01-20 00:03)
-        ☐ When authentication fails a 401 status code is returned @started(23-01-20 00:03)
+        ✔ An Express middleware function authenticates the following routes: @started(23-01-20 00:03) @done(23-01-20 23:30) @lasted(23h27m1s)
+            ✔ GET /api/users @started(23-01-20 00:03) @done(23-01-20 23:30) @lasted(23h27m1s)
+            ✔ POST /api/courses @started(23-01-20 00:03) @done(23-01-20 23:30) @lasted(23h27m1s)
+            ✔ PUT /api/courses/:id @started(23-01-20 00:03) @done(23-01-20 23:30) @lasted(23h27m1s)
+            ✔ DELETE /api/courses/:id @started(23-01-20 00:03) @done(23-01-20 23:30) @lasted(23h27m1s)
+        ✔ When authentication fails a 401 status code is returned @started(23-01-20 00:03) @done(23-01-20 23:36) @lasted(23h33m49s)
