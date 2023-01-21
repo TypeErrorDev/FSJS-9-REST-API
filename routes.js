@@ -155,7 +155,7 @@ router.delete(
   authenticateUser,
   asyncHandler(async (req, res) => {
     let course = await Course.findByPk(req.params.id);
-    //TODO Create check for no course ID found
+
     if (course.dataValues.userId === req.currentUser.id) {
       await course.destroy();
       console.log("deleting course");
