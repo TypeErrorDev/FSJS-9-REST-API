@@ -23,16 +23,16 @@ exports.authenticateUser = async (req, res, next) => {
       const authenticated = bcrypt.compareSync(credentials.pass, user.password);
       if (authenticated) {
         console.log(
-          `Authentication successful for emailAddress: ${user.emailAddress}`
+          `You have successfully authenticated for the following email address: ${user.emailAddress}`
         );
 
         // Store the user on the Request object.
         req.currentUser = user;
       } else {
-        message = `Authentication failure for emailAddress: ${user.emailAddress}`;
+        message = `Unfortunately, you have failed to authenticate for the following email address: ${user.emailAddress}`;
       }
     } else {
-      message = `User not found for emailAddress: ${credentials.name}`;
+      message = `Sorry, the following User was not found for the email address: ${credentials.name}`;
     }
   } else {
     message = "Auth header not found";
@@ -40,7 +40,9 @@ exports.authenticateUser = async (req, res, next) => {
 
   if (message) {
     console.warn(message);
-    res.status(401).json({ message: "Access Denied" });
+    res
+      .status(401)
+      .json({ message: "We're sorry, but your access has been denied" });
   } else {
     next();
   }
