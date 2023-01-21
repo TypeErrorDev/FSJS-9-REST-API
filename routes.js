@@ -155,12 +155,17 @@ router.delete(
   authenticateUser,
   asyncHandler(async (req, res) => {
     let course = await Course.findByPk(req.params.id);
-    if (course && req.currentUser.id === course.id) {
+    //TODO Create check for no course ID found
+    if (course.dataValues.userId === req.currentUser.id) {
       await course.destroy();
+      console.log("deleting course");
       res.status(204).end();
     } else {
+      console.log(
+        "Sorry but your not assigned this course, so you can't delete it"
+      );
       res
-        .status(403)
+        .status(418)
         .json({
           message:
             "Sorry but your not assigned this course, so you can't delete it",

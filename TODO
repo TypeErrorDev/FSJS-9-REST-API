@@ -43,12 +43,12 @@ User Routes
 
 Course Routes
     Meets Expectations
-        ☐ All of the following course routes are available and return the following data as specified: @started(23-01-20 00:03)
+        ✔ All of the following course routes are available and return the following data as specified: @started(23-01-20 00:03) @done(23-01-21 00:20) @lasted(1d17m45s)
             ✔ GET /api/courses 200 - Returns a list of courses (including the user object of each course its owner) @started(23-01-20 00:03) @done(23-01-20 14:44) @lasted(14h41m43s)
             ✔ GET /api/courses/:id 200 - Returns the course (including the user object of each course its owner) for the provided course ID @started(23-01-20 00:03) @done(23-01-20 14:44) @lasted(14h41m46s)
             ✔ POST /api/courses 201 - Creates a course, sets the Location header to the URI for the course, and returns no content @started(23-01-20 00:03) @done(23-01-20 15:16) @lasted(15h13m30s)
             ✔ PUT /api/courses/:id 204 - Updates a course and returns no content @started(23-01-20 00:03) @done(23-01-20 23:21) @lasted(23h18m49s)
-            ☐ DELETE /api/courses/:id 204 - Deletes a course and returns no content @started(23-01-20 00:03)
+            ✔ DELETE /api/courses/:id 204 - Deletes a course and returns no content @started(23-01-20 00:03) @done(23-01-21 00:20) @lasted(1d17m42s)
 
     Exceeds Expectations
         ✔ The GET /api/courses and /api/courses/:id routes filter out the following properties: @started(23-01-20 00:03) @done(23-01-20 23:37) @lasted(23h34m11s)
