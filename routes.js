@@ -166,7 +166,7 @@ router.delete(
         "Sorry but your not assigned this course, so you can't delete it"
       );
       res
-        .status(418)
+        .status(403)
         .json({
           message:
             "Sorry but your not assigned this course, so you can't delete it",
