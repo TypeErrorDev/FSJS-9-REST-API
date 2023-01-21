@@ -159,7 +159,13 @@ router.delete(
       await course.destroy();
       res.status(204).end();
     } else {
-      res.status(403).end();
+      res
+        .status(403)
+        .json({
+          message:
+            "Sorry but your not assigned this course, so you can't delete it",
+        })
+        .end();
     }
   })
 );
