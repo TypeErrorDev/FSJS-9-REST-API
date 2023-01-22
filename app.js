@@ -1,6 +1,7 @@
 "use strict";
 
 // load modules
+const cors = require("cors");
 const express = require("express");
 const morgan = require("morgan");
 const { sequelize } = require("./models");
@@ -13,6 +14,7 @@ const enableGlobalErrorLogging =
 const app = express();
 app.use(express.json());
 app.use("/api", routes);
+app.use(cors());
 
 //authentication
 sequelize
