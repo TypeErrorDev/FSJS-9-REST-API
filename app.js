@@ -1,18 +1,19 @@
 "use strict";
-// This section allows your frontend to make requests to your backend with the NPM CORS Package
-const cors = require("cors");
-const corsOptions = {
-  origin: "*",
-  credentials: true, //access-control-allow-credentials:true
-  optionSuccessStatus: 200,
-};
-app.use(cors(corsOptions));
 
 // Load modules
 const express = require("express");
 const morgan = require("morgan");
 const { sequelize } = require("./models");
 const routes = require("./routes");
+
+// This section allows your frontend to make requests to your backend with the NPM CORS Package
+// https://stackoverflow.com/questions/43871637/no-access-control-allow-origin-header-is-present-on-the-requested-resource-whe/43881141#43881141
+const cors = require("cors");
+const corsOptions = {
+  origin: "*",
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
 
 // variable to enable global error logging
 const enableGlobalErrorLogging =
@@ -21,6 +22,7 @@ const enableGlobalErrorLogging =
 const app = express();
 app.use(express.json());
 app.use("/api", routes);
+app.use(cors(corsOptions));
 
 //authentication
 sequelize
