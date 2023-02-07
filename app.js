@@ -1,7 +1,14 @@
 "use strict";
-
-// load modules
+// This section allows your frontend to make requests to your backend with the NPM CORS Package
 const cors = require("cors");
+const corsOptions = {
+  origin: "*",
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
+
+// Load modules
 const express = require("express");
 const morgan = require("morgan");
 const { sequelize } = require("./models");
@@ -14,7 +21,6 @@ const enableGlobalErrorLogging =
 const app = express();
 app.use(express.json());
 app.use("/api", routes);
-app.use(cors());
 
 //authentication
 sequelize
